@@ -1,0 +1,19 @@
+{
+  "name": "trumps_views",
+  "version": "1.0.0",
+  "description": "Website to guess Trumps views and policy",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MattJGlick/trumps_views"
+  },    
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Glick",
+  "license": "MIT",
+  "dependencies": {
+    "angular": "^1.5.2",
+    "express": "^4.13.4"
+  }
+}
