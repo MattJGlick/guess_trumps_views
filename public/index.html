@@ -1,0 +1,48 @@
+<!doctype html>
+<html ng-app="trumpApp">
+<head>
+    <meta charset="utf-8">
+    <title>Guess Trump's Views</title>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+
+    <script src="js/controllers/main.js"></script> <!-- load up our controller -->
+    <script src="js/services/todos.js"></script> <!-- load our todo service -->
+    <script src="js/core.js"></script> <!-- load our main application -->
+    <script src="bundle.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="questionController">
+    <div class="container">
+        <!-- HEADER AND TODO COUNT -->
+        <div class="jumbotron text-center">
+            <h1>Guess Trump's Views</h1>
+        </div>
+
+        <div id="questions-form" ng-show="showQuestions" class="row">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <div ng-show="showAnswer">
+                    <p id="wrong">WRONG!</p>
+                </div>
+                <p id="question">{{question.q}}</p>
+                
+                <button type="submit" ng-disabled="choicesDisabled" class="btn btn-primary btn-xlarge" ng-click="answer('1')">{{question.a1}}</button>
+                <button type="submit" ng-disabled="choicesDisabled" class="btn btn-primary btn-xlarge" ng-click="answer('2')">{{question.a2}}</button>
+                
+                <div ng-show="showAnswer">
+                    <button type="submit" class="btn btn-primary btn-xlarge" ng-click="nextQuestion()">{{nextMessage}}</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="results" ng-hide="showQuestions">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
+                <p>TRUMP IS DUMB</p>
+            </div>
+        </div>        
+    </div>
+</body>
+</html>
